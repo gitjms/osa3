@@ -23,6 +23,7 @@
     "url": "https://github.com/gitjms/osa3/issues"
   },
   "homepage": "https://github.com/gitjms/osa3#readme",
+  "proxy": "http://localhost:3001",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
