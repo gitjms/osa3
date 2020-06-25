@@ -20,7 +20,7 @@ mongoose.connect( config.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopolog
   })
 
 app.use('/api/people', peopleRouter)
-app.use('/api/info', infoRouter)
+app.use('/info', infoRouter)
 
 app.use(cors())
 app.use(express.static('build'))
