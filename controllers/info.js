@@ -3,10 +3,10 @@ const Person = require('../models/person')
 
 infoRouter.get('/', (request, response, next) => {
   Person.find({})
-    .then(persons => {
-      if (persons) {
+    .then(people => {
+      if (people) {
         const result = {
-          num: persons.length,
+          num: people.length,
           date: new Date(),
         }
         const results = '<title>Phonebook Info Page</title>'

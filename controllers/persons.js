@@ -2,8 +2,8 @@ const personsRouter = require('express').Router()
 const Person = require('../models/person')
 
 personsRouter.get('/', (request, response) => {
-  Person.find({}).then(persons => {
-    response.json(persons.map(person => person.toJSON()))
+  Person.find({}).then(people => {
+    response.json(people.map(person => person.toJSON()))
   })
 })
 
