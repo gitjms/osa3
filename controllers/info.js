@@ -1,7 +1,7 @@
 const infoRouter = require('express').Router()
 const Person = require('../models/person')
 
-infoRouter.get('/', (request, response) => {
+infoRouter.get('/', (request, response, next) => {
   Person.find({})
     .then(persons => {
       if (persons) {
@@ -22,14 +22,10 @@ infoRouter.get('/', (request, response) => {
         + '</center>'
         response.send(results)
       } else {
-        console.log('error in info.js')
-        // response.status(404).end()
+        response.status(404).end()
       }
     })
-    .catch((error) => {
-      console.log('error getting info:', error.message)
-      response.status(404).end()
-    })
+    .catch(error => next(error))
 
 })
 
