@@ -19,7 +19,7 @@ mongoose.connect( config.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopolog
     console.log('error connecting to MongoDB:', error.message)
   })
 
-app.use('/api/people', peopleRouter)
+app.use('/', peopleRouter)
 app.use('/info', infoRouter)
 
 app.use(cors())
