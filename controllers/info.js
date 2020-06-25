@@ -26,7 +26,6 @@ infoRouter.get('/', (request, response, next) => {
       }
     })
     .catch(error => next(error))
-
 })
 
 module.exports = infoRouter
