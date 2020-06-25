@@ -3,7 +3,7 @@ const config = require('./utils/config')
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const personsRouter = require('./controllers/persons')
+const peopleRouter = require('./controllers/people')
 const infoRouter = require('./controllers/info')
 const middleware = require('./utils/middleware')
 const logger = require('./utils/logger')
@@ -19,7 +19,7 @@ mongoose.connect( config.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopolog
     console.log('error connecting to MongoDB:', error.message)
   })
 
-app.use('/api/people', personsRouter)
+app.use('/api/people', peopleRouter)
 app.use('/info', infoRouter)
 
 app.use(cors())
