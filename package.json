@@ -1,0 +1,38 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:ui": "rm -rf build && cd ../../fullstack/osa2/puhelinluettelo/frontend && npm run build --prod && cp -r build ../../../../osa3/backend",
+    "deploy": "git push heroku master",
+    "deploy:full": "npm run build:ui && git add . && git commit -m 'uibuild' && git push && npm run deploy",
+    "logs:prod": "heroku logs --tail",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gitjms/osa3.git"
+  },
+  "author": "Jari Sunnari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gitjms/osa3/issues"
+  },
+  "homepage": "https://github.com/gitjms/osa3#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.20",
+    "mongoose-unique-validator": "^2.0.3",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.3.1",
+    "nodemon": "^2.0.4"
+  }
+}
