@@ -1,7 +1,7 @@
 const infoRouter = require('express').Router()
 const Person = require('../models/person')
 
-infoRouter.get('/', (request, response) => {
+infoRouter.get('/info', (request, response) => {
   Person.find({})
     .then(persons => {
       if (persons) {
