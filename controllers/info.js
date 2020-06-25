@@ -22,11 +22,12 @@ infoRouter.get('/info', (request, response) => {
         + '</center>'
         response.send(results)
       } else {
-        response.status(404).end()
+        console.log('error in info.js')
+        // response.status(404).end()
       }
     })
-    .catch(error => {
-      console.log(error)
+    .catch((error) => {
+      console.log('error getting info:', error.message)
       response.status(404).end()
     })
 
