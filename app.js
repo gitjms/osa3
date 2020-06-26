@@ -24,6 +24,7 @@ app.use(express.static('build'))
 app.use(express.json())
 app.use(middleware.requestLogger)
 app.use(middleware.custom_morgan)
+app.use(express.static('${__dirname}/build'))
 
 app.use('/api/people', peopleRouter)
 app.use('/info', infoRouter)
