@@ -26,6 +26,11 @@ app.use(express.json())
 app.use(middleware.requestLogger)
 app.use(middleware.custom_morgan)
 
+app.get('*', (req, res) => {
+  // let path = req.params['0'].substring(1)
+  res.sendFile(`${__dirname}/build/index.html`)
+})
+
 app.use('/api/people', peopleRouter)
 app.use('/info', infoRouter)
 
