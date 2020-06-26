@@ -19,11 +19,6 @@ mongoose.connect( config.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopolog
     console.log('error connecting to MongoDB:', error.message)
   })
 
-app.get('*', (req, res) => {
-  // let path = req.params['0'].substring(1)
-  res.sendFile(`${__dirname}/build/index.html`)
-})
-
 app.use(cors())
 app.use(express.static('build'))
 app.use(express.json())
