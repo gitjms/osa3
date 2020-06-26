@@ -5,7 +5,7 @@ const logger = require('./utils/logger')
 
 const server = http.createServer(app)
 
-app.get('*', (req, res) => {
+server.get('*', (req, res) => {
   // let path = req.params['0'].substring(1)
   res.sendFile(`${__dirname}/build/index.html`)
 })
