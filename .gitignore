@@ -1,6 +1,9 @@
 # dependencies
 /node_modules
 
+# production
+/build
+
 # misc
 package-lock.json
 requests
