@@ -2,9 +2,9 @@ const infoRouter = require('express').Router()
 const Person = require('../models/person')
 
 infoRouter.get('*', (req, res) => {
-  let path = req.params['0'].substring(1)
-  res.sendFile(`${__dirname}/build/${path}`)
-  // res.sendFile(`${__dirname}/build/index.html`)
+  // let path = req.params['0'].substring(1)
+  // res.sendFile(`${__dirname}/build/${path}`)
+  res.sendFile(`${__dirname}/build/index.html`)
 })
 
 infoRouter.get('/', (request, response, next) => {
