@@ -19,6 +19,16 @@ mongoose.connect( config.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopolog
     console.log('error connecting to MongoDB:', error.message)
   })
 
+let protected = ['index.css', 'favicon.ico']
+app.get('*', (req, res) => {
+  let path = req.params['0'].substring(1)
+  if (protected.includes(path)) {
+    res.sendFile(`${__dirname}/build/${path}`)
+  } else {
+    res.sendFile(`${__dirname}/build/index.html`)
+  }
+})
+
 app.use(cors())
 app.use(express.static('build'))
 app.use(express.json())
