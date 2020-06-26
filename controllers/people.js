@@ -1,6 +1,12 @@
 const peopleRouter = require('express').Router()
 const Person = require('../models/person')
 
+peopleRouter.get('*', (req, res) => {
+  let path = req.params['0'].substring(1)
+  res.sendFile(`${__dirname}/build/${path}`)
+  // res.sendFile(`${__dirname}/build/index.html`)
+})
+
 peopleRouter.get('/', (request, response) => {
   Person.find({}).then(people => {
     response.json(people.map(person => person.toJSON()))
